@@ -40,7 +40,7 @@ const
   KEY_END         = $4F;
   KEY_INSERT      = $52;
   KEY_F1          = $3B;
-  KEY_F2          = $3C;  { Setup / Config (TC.CFG) }
+  KEY_F2          = $3C;  { Setup / Config (FC.CFG) }
   KEY_F3          = $3D;  { View Image -> CfgViewImg }
   KEY_F4          = $3E;  { View/Edit -> CfgEditor }
   KEY_F5          = $3F;  { Copy }
@@ -193,7 +193,7 @@ procedure ReadZipDirectory(var Panel: TPanel); forward;
 procedure SortDirectory(var Panel: TPanel); forward;
 
 {===========================================================================}
-{   CONFIGURATION FILE HANDLING (TC.CFG)                                    }
+{   CONFIGURATION FILE HANDLING (FC.CFG)                                    }
 {===========================================================================}
 
 procedure LoadConfig;
@@ -208,7 +208,7 @@ begin
   CfgIsoDateTime := True;
   CfgConfirmOps := True;
 
-  Assign(T, 'TC.CFG');
+  Assign(T, 'FC.CFG');
   Reset(T);
   if IOResult = 0 then
   begin
@@ -242,7 +242,7 @@ procedure SaveConfig;
 var
   T: Text;
 begin
-  Assign(T, 'TC.CFG');
+  Assign(T, 'FC.CFG');
   Rewrite(T);
   if IOResult = 0 then
   begin
@@ -2131,7 +2131,7 @@ begin
   WriteStr(17,  9, 'TAB           Switch Active Panel', ATTR_DIALOG_BG);
   WriteStr(17, 10, 'ENTER         Enter Subdir / Mount ZIP', ATTR_DIALOG_BG);
   WriteStr(17, 11, 'F1            Help Menu', ATTR_DIALOG_BG);
-  WriteStr(17, 12, 'F2            Setup Paths (TC.CFG)', ATTR_DIALOG_BG);
+  WriteStr(17, 12, 'F2            Setup Paths (FC.CFG)', ATTR_DIALOG_BG);
   WriteStr(17, 13, 'F3            View Image (BMP/JPG/GIF)', ATTR_DIALOG_BG);
   WriteStr(17, 14, 'F4            View/Edit File (or from ZIP)', ATTR_DIALOG_BG);
   WriteStr(17, 15, 'F5            Copy File / Dir Tree / ZIP', ATTR_DIALOG_BG);
